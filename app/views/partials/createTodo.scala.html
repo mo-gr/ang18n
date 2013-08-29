@@ -1,0 +1,5 @@
+@(implicit lang: Lang)
+
+<label for="newToDo">@Messages("todo.create.label")</label>
+<input id="newToDo" type="text" ng-model="newToDo.name"/>
+<input type="submit" ng-click="createToDo()" value="@Messages("todo.create.button")"/>

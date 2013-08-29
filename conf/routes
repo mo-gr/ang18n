@@ -5,6 +5,11 @@
 # Home page
 GET        /                    controllers.Application.index
 
+# Partials
+GET        /partials/language-switch controllers.LocalizedPartialsController.languageSwitch
+GET        /partials/create-todo controllers.LocalizedPartialsController.createTodo
+
+# API
 GET        /api/1.0/todo        controllers.ToDoController.todos
 PUT        /api/1.0/todo        controllers.ToDoController.create
 POST       /api/1.0/todo/:id    controllers.ToDoController.updateDone(id: Long)

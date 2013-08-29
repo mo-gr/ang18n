@@ -1,0 +1,9 @@
+@(implicit lang: Lang)
+
+<div ng-controller="LanguageController">
+    <select name="language" id="language" ng-model="language">
+        <option value="en">English (@Messages("language.select.en"))</option>
+        <option value="de">Deutsch (@Messages("language.select.de"))</option>
+    </select>
+    <button ng-click="updateLanguage(language)">@Messages("language.select.button")</button>
+</div>

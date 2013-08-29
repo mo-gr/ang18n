@@ -2,9 +2,7 @@
 
     <div ng-controller="ToDoController">
 
-        <label for="newToDo">New ToDo</label>
-        <input id="newToDo" type="text" ng-model="newToDo.name"/>
-        <input type="submit" ng-click="createToDo()"/>
+        <div ng-include="'/partials/create-todo'"></div>
 
         <h1>ToDos</h1>
         <ul>

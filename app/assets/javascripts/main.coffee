@@ -1,5 +1,12 @@
 
-app = angular.module('ToDoApp', [])
+app = angular.module('ToDoApp', ['ngCookies'])
+
+app.controller('LanguageController', ['$scope', 'LanguageService', ($scope, LanguageService) ->
+  $scope.language = LanguageService.currentLanguage()
+
+  $scope.updateLanguage = (language) ->
+    LanguageService.setLanguage(language)
+])
 
 app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService) ->
   newToDo = () ->
@@ -17,6 +24,16 @@ app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService)
   $scope.toggleDone = (todo) ->
     ToDoService.toggleDone(todo).then () ->
       $scope.toDos = ToDoService.getAll()
+])
+
+app.service('LanguageService', ['$http', '$cookies', '$window', ($http, $cookies, $window) ->
+  @setLanguage = (key) ->
+    console.log(key)
+    $cookies.language = key
+    $window.location.reload()
+
+  @currentLanguage = () ->
+    $cookies.language or "en"
 ])
 
 app.service('ToDoService', ['$http', ($http) ->
