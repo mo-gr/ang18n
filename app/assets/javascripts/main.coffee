@@ -8,6 +8,11 @@ app.controller('LanguageController', ['$scope', 'LanguageService', ($scope, Lang
     LanguageService.setLanguage(language)
 ])
 
+app.controller('TodayController', ['$scope', ($scope) ->
+  $scope.now = () ->
+    new Date()
+])
+
 app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService) ->
   newToDo = () ->
     {done: false, name: ''}
