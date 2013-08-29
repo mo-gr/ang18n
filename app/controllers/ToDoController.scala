@@ -29,5 +29,10 @@ object ToDoController extends Controller {
       invalid = e => BadRequest("invalid request")
     )
   }
+
+  def prune = Action {
+    ToDoService.prune()
+    Ok("ok")
+  }
 }
 

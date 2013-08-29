@@ -1,6 +1,13 @@
+application.title=Dürftiger Aufgabenplaner
+
 language.select.en=Englisch
 language.select.de=Deutsch
 language.select.button=Sprache Auswählen
 
 todo.create.label=Was hast Du vor?
 todo.create.button=Zur Liste hinzufügen
+todo.prune.button=Liste ausmisten
+
+todo.list.header=Meine aktuellen Aufgaben
+
+todo.list.empty=Alles erledigt. Such Dir was neues!

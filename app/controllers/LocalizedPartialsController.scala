@@ -8,7 +8,7 @@ import play.api.i18n.Lang
  * User: Moritz Grauel <moritz.grauel@akquinet.de>
  * Date: 29.08.13
  */
-object LocalizedPartialsController extends Controller {
+object LocalizedPartialsController extends Controller with LocaleFromRequest{
 
   def languageSwitch = Action { implicit request =>
 
@@ -19,9 +19,12 @@ object LocalizedPartialsController extends Controller {
     Ok(views.html.partials.createTodo(localeFromRequest))
   }
 
+}
+
+trait LocaleFromRequest {
   def localeFromRequest(implicit request: RequestHeader): Lang = {
     request.cookies.get("language") match {
-      case None => super.lang(request)
+      case None => Application.lang(request)
       case Some(cookie) => Lang(cookie.value)
     }
   }

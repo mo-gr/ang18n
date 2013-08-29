@@ -1,6 +1,13 @@
+application.title=Lame ToDo List
+
 language.select.en=English
 language.select.de=German
 language.select.button=Select language
 
 todo.create.label=What are you up to?
 todo.create.button=Add to list
+todo.prune.button=Prune list
+
+todo.list.header=My current To-Dos
+
+todo.list.empty=All done. Go party!

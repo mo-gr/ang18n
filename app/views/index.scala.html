@@ -1,17 +1,24 @@
-@main("ang18n") {
+@(implicit lang: Lang)
+
+@main(Messages("application.title")) {
 
     <div ng-controller="ToDoController">
 
+
+        <h1>@Messages("todo.list.header")</h1>
+        <div class="well">
+            <ul>
+                <li ng-repeat="toDo in toDos" >
+                    <div ng-bind="toDo.name"
+                    ng-click="toggleDone(toDo)"
+                    ng-class="{ done: toDo.done }"></div>
+                </li>
+                <li ng-show="!toDos.length">@Messages("todo.list.empty")</li>
+            </ul>
+        </div>
+
         <div ng-include="'/partials/create-todo'"></div>
 
-        <h1>ToDos</h1>
-        <ul>
-            <li ng-repeat="toDo in toDos" >
-                <div ng-bind="toDo.name"
-                     ng-click="toggleDone(toDo)"
-                     ng-class="{ done: toDo.done }"></div>
-            </li>
-        </ul>
     </div>
 
 }

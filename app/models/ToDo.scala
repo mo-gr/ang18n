@@ -81,4 +81,11 @@ object ToDoService {
         SQL("UPDATE todos SET done = {done} WHERE id = {id}").on("done" -> done).on("id" -> id).executeUpdate()
     }
   }
+
+  def prune() = {
+    DB.withConnection {
+      implicit connection =>
+        SQL("DELETE FROM todos WHERE done = true").executeUpdate()
+    }
+  }
 }
