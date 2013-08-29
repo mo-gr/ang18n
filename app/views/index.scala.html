@@ -1,0 +1,19 @@
+@main("ang18n") {
+
+    <div ng-controller="ToDoController">
+
+        <label for="newToDo">New ToDo</label>
+        <input id="newToDo" type="text" ng-model="newToDo.name"/>
+        <input type="submit" ng-click="createToDo()"/>
+
+        <h1>ToDos</h1>
+        <ul>
+            <li ng-repeat="toDo in toDos" >
+                <div ng-bind="toDo.name"
+                     ng-click="toggleDone(toDo)"
+                     ng-class="{ done: toDo.done }"></div>
+            </li>
+        </ul>
+    </div>
+
+}
