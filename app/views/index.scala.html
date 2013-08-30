@@ -4,14 +4,13 @@
 
     <div ng-controller="ToDoController">
 
-
         <h1>@Messages("todo.list.header")</h1>
         <div class="well">
             <ul class="todo-list">
-                <li ng-repeat="toDo in toDos" ng-class="{ done: toDo.done }" class="lead">
-                    <span ng-bind="toDo.name" ng-click="toggleDone(toDo)"></span>
+                <li ng-repeat="toDo in toDos" ng-class="{ done: toDo.done }" ng-click="toggleDone(toDo)">
+                   {{toDo.name}}
                 </li>
-                <li class="lead" ng-show="!toDos.length"><span>@Messages("todo.list.empty")</span></li>
+                <li ng-show="!toDos.length">@Messages("todo.list.empty")</li>
             </ul>
         </div>
 

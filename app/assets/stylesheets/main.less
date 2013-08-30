@@ -1,10 +1,34 @@
-.done * {
+.done {
   text-decoration: line-through;
+  color: #999;
 }
 
 .todo-list {
   list-style: none;
   padding: 0;
+  font-size: 20px;
+  li {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+
+    &.ng-enter {
+      opacity: 0;
+    }
+    &.ng-enter-active {
+      opacity: 1;
+    }
+
+    &.ng-leave {
+      opacity: 1;
+    }
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
   li.done:before {
     content: '✔';
   }

@@ -1,5 +1,5 @@
 
-app = angular.module('ToDoApp', ['ngCookies'])
+app = angular.module('ToDoApp', ['ngCookies', 'ngAnimate'])
 
 app.controller('LanguageController', ['$scope', 'LanguageService', ($scope, LanguageService) ->
   $scope.language = LanguageService.currentLanguage()
@@ -27,7 +27,6 @@ app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService)
 
   $scope.toggleDone = (todo) ->
     ToDoService.toggleDone(todo)
-
 
   $scope.prune = () ->
     $scope.toDos = ToDoService.prune()

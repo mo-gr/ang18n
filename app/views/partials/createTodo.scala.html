@@ -3,19 +3,20 @@
 <form name="form" class="form-inline" role="form" novalidate>
     <div class="form-group">
         <label class="sr-only" for="newToDo">@Messages("todo.create.label")</label>
-        <input
-        id="newToDo"
-        type="text"
-        class="form-control"
-        placeholder="@Messages("todo.create.label")"
-        ng-model="newToDo.name"
-        ng-required="true"/>
+        <input id="newToDo"
+               type="text"
+               class="form-control"
+               placeholder="@Messages("todo.create.label")"
+               ng-model="newToDo.name"
+               ng-required="true"/>
     </div>
-    <input
-    type="submit"
-    class="btn"
-    ng-disabled="form.$invalid"
-    ng-click="createToDo()"
-    value="@Messages("todo.create.button")"/>
-    <input type="submit" class="btn btn-warning pull-right" ng-click="prune()" value="@Messages("todo.prune.button")"/>
+    <input type="submit"
+           class="btn"
+           ng-disabled="form.$invalid"
+           ng-click="createToDo()"
+           value="@Messages("todo.create.button")"/>
+    <input type="submit"
+           class="btn btn-warning pull-right"
+           ng-click="prune()"
+           value="@Messages("todo.prune.button")"/>
 </form>
