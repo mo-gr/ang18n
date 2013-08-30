@@ -9,6 +9,8 @@ CREATE TABLE todos (
     PRIMARY KEY (id)
 );
 
+INSERT INTO todos (name, done) VALUES ('Hook up a real Database', false)
+
 # --- !Downs
 
 DROP TABLE todos;

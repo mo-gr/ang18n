@@ -7,13 +7,11 @@
 
         <h1>@Messages("todo.list.header")</h1>
         <div class="well">
-            <ul>
-                <li ng-repeat="toDo in toDos" >
-                    <div ng-bind="toDo.name"
-                    ng-click="toggleDone(toDo)"
-                    ng-class="{ done: toDo.done }"></div>
+            <ul class="todo-list">
+                <li ng-repeat="toDo in toDos" ng-class="{ done: toDo.done }" class="lead">
+                    <span ng-bind="toDo.name" ng-click="toggleDone(toDo)"></span>
                 </li>
-                <li ng-show="!toDos.length">@Messages("todo.list.empty")</li>
+                <li class="lead" ng-show="!toDos.length"><span>@Messages("todo.list.empty")</span></li>
             </ul>
         </div>
 

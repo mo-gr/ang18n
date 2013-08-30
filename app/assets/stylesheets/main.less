@@ -1,3 +1,14 @@
-.done {
+.done * {
   text-decoration: line-through;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  li.done:before {
+    content: '✔';
+  }
+  li:before {
+    content: '✘';
+  }
 }
