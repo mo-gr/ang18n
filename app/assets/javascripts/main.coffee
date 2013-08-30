@@ -22,18 +22,15 @@ app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService)
   $scope.toDos = ToDoService.getAll()
 
   $scope.createToDo = () ->
-    ToDoService.create($scope.newToDo).then () ->
-      $scope.toDos = ToDoService.getAll()
+    ToDoService.create($scope.newToDo)
     $scope.newToDo = newToDo()
 
   $scope.toggleDone = (todo) ->
-    ToDoService.toggleDone(todo).then () ->
-      $scope.toDos = ToDoService.getAll()
+    ToDoService.toggleDone(todo)
+
 
   $scope.prune = () ->
-    ToDoService.prune().then () ->
-      $scope.toDos = ToDoService.getAll()
-
+    $scope.toDos = ToDoService.prune()
 ])
 
 app.service('LanguageService', ['$http', '$cookies', '$window', ($http, $cookies, $window) ->
@@ -47,12 +44,15 @@ app.service('LanguageService', ['$http', '$cookies', '$window', ($http, $cookies
 ])
 
 app.service('ToDoService', ['$http', ($http) ->
+  todos = []
+
   @getAll = () ->
     $http.get('/api/1.0/todo').then (response) ->
-      response.data
+      todos = response.data
 
   @create = (newToDo) ->
-    $http.put('/api/1.0/todo', newToDo)
+    $http.put('/api/1.0/todo', newToDo).then (response) ->
+      todos.push(response.data)
 
   @toggleDone = (todo) ->
     todo.done = !todo.done
@@ -60,4 +60,5 @@ app.service('ToDoService', ['$http', ($http) ->
 
   @prune = () ->
     $http.post('/api/1.0/todo/prune')
+    todos = todos.filter((i) -> !i.done)
 ])
