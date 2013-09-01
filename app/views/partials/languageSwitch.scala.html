@@ -2,13 +2,14 @@
 
 
 
-<div class="pull-right"
+<div class="navbar-right"
 ng-controller="LanguageController">
     <select name="language" id="language" ng-model="language">
         <option value="en">English (@Messages("language.select.en"))</option>
         <option value="de">Deutsch (@Messages("language.select.de"))</option>
     </select>
-    <button class="navbar-btn btn btn-default"
+    <button class="btn btn-default navbar-btn"
+            style="margin-right: 15px;"
             ng-click="updateLanguage(language)">
               @Messages("language.select.button")
     </button>
