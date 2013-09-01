@@ -25,7 +25,7 @@ trait LocaleFromRequest {
   def localeFromRequest(implicit request: RequestHeader): Lang = {
     request.cookies.get("language") match {
       case None => Application.lang(request)
-      case Some(cookie) => Lang(cookie.value)
+      case Some(cookie) => Lang.get(cookie.value).getOrElse(Application.lang(request))
     }
   }
 }
