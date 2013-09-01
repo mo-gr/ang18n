@@ -9,9 +9,11 @@ This is a simple todo list application (the hello world of the web), that shows 
 
 Additionally, this also shows how to use [angular.js](angular) with CoffeeScript.
 
+The app is running on heroku [here](example).
 
 [angular]: http://angularjs.org
 [play]: http://www.playframework.com
+[example]: http://ang18n-example.herokuapp.com/
 
 License
 =======
