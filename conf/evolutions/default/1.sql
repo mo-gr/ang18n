@@ -9,6 +9,7 @@ CREATE TABLE todos (
     PRIMARY KEY (id)
 );
 
+INSERT INTO todos (name, done) VALUES ('Deploy a test instance', true);
 INSERT INTO todos (name, done) VALUES ('Hook up a real Database', false);
 INSERT INTO todos (name, done) VALUES ('Actually translate the todos', false);
 
