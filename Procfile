@@ -1,1 +1,1 @@
-web:  play -Dhttp.port=$PORT -DapplyEvolutions.default=true start
+web:  target/start -Dhttp.port=$PORT -DapplyEvolutions.default=true $JAVA_OPTS
