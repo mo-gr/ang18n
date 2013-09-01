@@ -1,0 +1,14 @@
+application.title=物足りないタスク一覧
+
+language.select.en=英語
+language.select.de=ドイツ語
+language.select.ja=日本語
+language.select.button=言語を選択
+
+todo.create.label=何をしますか?
+todo.create.button=リストに追加
+todo.prune.button=完了の項目を削除
+
+todo.list.header=現在の仕事
+
+todo.list.empty=全部終わった。休め！
