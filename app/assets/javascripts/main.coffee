@@ -34,7 +34,6 @@ app.controller('ToDoController', ['$scope', 'ToDoService', ($scope, ToDoService)
 
 app.service('LanguageService', ['$http', '$cookies', '$window', ($http, $cookies, $window) ->
   @setLanguage = (key) ->
-    console.log(key)
     $cookies.language = key
     $window.location.reload()
 
