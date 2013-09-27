@@ -1,6 +1,5 @@
-import anorm.Id
 import controllers.ToDoController
-import models.{ToDo, ToDoService}
+import models.{ToDoId, ToDo, ToDoService}
 import org.specs2.mutable._
 
 import play.api.mvc.Result
@@ -47,7 +46,7 @@ class ToDoControllerSpec extends Specification {
 
     "update a todo to done" in {
       running(FakeApplication()) {
-        val testTodo: ToDo = ToDoService.createNew(ToDo(Some(0L), "test", false))
+        val testTodo: ToDo = ToDoService.createNew(ToDo(Some(ToDoId(0)), "test", false))
 
         val res = ToDoController.updateDone(testTodo.id.get)(
             FakeRequest(POST, s"/api/1.0/todo/${testTodo.id}", FakeHeaders(), Json.parse("""{"name":"", "done":true}"""))

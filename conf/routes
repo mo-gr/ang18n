@@ -13,7 +13,7 @@ GET         /partials/create-todo            controllers.LocalizedPartialsContro
 GET         /api/1.0/todo                    controllers.ToDoController.todos
 PUT         /api/1.0/todo                    controllers.ToDoController.create
 POST        /api/1.0/todo/prune              controllers.ToDoController.prune
-POST        /api/1.0/todo/:id                controllers.ToDoController.updateDone(id: Long)
+POST        /api/1.0/todo/:id                controllers.ToDoController.updateDone(id: models.ToDoId)
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.at(path="/public", file)
