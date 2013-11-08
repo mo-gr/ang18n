@@ -2,7 +2,7 @@ package controllers
 
 import play.api.mvc._
 import play.api.libs.json.{JsResult, Json}
-import models.{ToDoService, ToDo}
+import models.{ToDoId, ToDoService, ToDo}
 import models.ToDoService._
 
 /**
@@ -23,7 +23,7 @@ object ToDoController extends Controller {
     )
   }
 
-  def updateDone(id: Long) = Action(parse.json) { request =>
+  def updateDone(id: ToDoId) = Action(parse.json) { request =>
     request.body.validate[ToDo].fold(
       valid = toUpdate => Ok(Json.toJson(ToDoService.setDone(id, toUpdate.done))),
       invalid = e => BadRequest("invalid request")
