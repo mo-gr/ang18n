@@ -4,8 +4,13 @@ import sbt.Keys._
 import com.typesafe.sbt.packager.Keys._
 
 /**
+<<<<<<< HEAD
+* Build of UI in JavaScript
+*/
+=======
  * Build of UI in JavaScript
  */
+>>>>>>> 1718e12389b7a2de946cc5e0e881979f0fbd0507
 object JavaScriptBuild {
   val uiDirectory = SettingKey[File]("ui-directory")
 
@@ -40,4 +45,8 @@ object JavaScriptBuild {
     state
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1718e12389b7a2de946cc5e0e881979f0fbd0507

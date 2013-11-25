@@ -37,18 +37,30 @@ module.exports = function(grunt) {
                         ] // concat then compile into single file
                 }
             }
+        },
+		copy: {
+		  main: {
+		    files: [
+				{expand: true, src: ['fonts/*', 'images/*', 'stylesheets/*',], dest: '<%= target %>/', filter: 'isFile'},
+		    ]
+		  }
+		},
+        watch: {
+            files: ['**/*.js','**/*.css'],
+            tasks: ['default']
         }
     });
 
-    // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    // Load the plugin that provides the "watch" task.
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-contrib-coffee');
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    
+
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'coffee']);
+    grunt.registerTask('default', ['uglify', 'coffee', 'copy']);
 
 };

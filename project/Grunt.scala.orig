@@ -36,5 +36,8 @@ object Grunt {
     state
   }
   def gruntProcess(base: File, args: String*) = Process("node" :: "node_modules/.bin/grunt" :: args.toList, base)
-
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1718e12389b7a2de946cc5e0e881979f0fbd0507
