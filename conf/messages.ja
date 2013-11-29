@@ -3,6 +3,7 @@ application.title=物足りないタスク一覧
 language.select.en=英語
 language.select.de=ドイツ語
 language.select.ja=日本語
+language.select.fr=仏人
 language.select.button=言語を選択
 
 todo.create.label=何をしますか?

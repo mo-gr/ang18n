@@ -3,6 +3,7 @@ application.title=Dürftiger Aufgabenplaner
 language.select.en=Englisch
 language.select.de=Deutsch
 language.select.ja=Japanisch
+language.select.fr=Französisch
 language.select.button=Sprache Auswählen
 
 todo.create.label=Was hast Du vor?

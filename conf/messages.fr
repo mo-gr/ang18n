@@ -1,0 +1,15 @@
+application.title=Planificateur minimal
+
+language.select.en=Anglais
+language.select.de=Allemand
+language.select.ja=Japonais
+language.select.fr=Francais
+language.select.button=Choisir cette langue
+
+todo.create.label=Qu'est ce que t'as à faire ?
+todo.create.button=Ajouter à la liste
+todo.prune.button=Nettoyer la liste
+
+todo.list.header=Mes trucs à faire
+
+todo.list.empty=Fini. Cherche toi du boulot !
