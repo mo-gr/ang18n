@@ -17,3 +17,7 @@ POST        /api/1.0/todo/:id                controllers.ToDoController.updateDo
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /assets/images/*file             controllers.Assets.at(path="/public/images", file)
+GET         /assets/stylesheets/*file        controllers.Assets.at(path="/public/stylesheets", file)
+GET         /assets/fonts/*file              controllers.Assets.at(path="/public/fonts", file)
+GET         /assets/javascripts/*file        controllers.Assets.at(path="/public/javascripts", file)

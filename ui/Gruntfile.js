@@ -13,14 +13,9 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'src/<%= pkg.name %>*.js',
-                dest: '<%= target %>/<%= pkg.name %>.min.js'
+                src: 'src/javascripts/*.js',
+                dest: '<%= target %>main.min.js'
             }
-        },
-
-        watch: {
-            files: ['**/*.js'],
-            tasks: ['default']
         },
 
         coffee: {
@@ -29,7 +24,7 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    '<%= target %>/main.js': [
+                    '<%= target %>javascripts/main.js': [
                         'src/app/*.coffee',
                         'src/app/controllers/*.coffee',
                         'src/app/services/*.coffee',
@@ -41,26 +36,48 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
-				{expand: true, src: ['fonts/*', 'images/*', 'stylesheets/*',], dest: '<%= target %>/', filter: 'isFile'},
+                {cwd: 'src/', filter: 'isFile', flatten: true, expand: true, src: ['fonts/*'], dest: '<%= target %>fonts'},
+                {cwd: 'src/', filter: 'isFile', flatten: true, expand: true, src: ['images/*'], dest: '<%= target %>images'},
+                {cwd: 'src/', filter: 'isFile', flatten: true, expand: true, src: ['javascripts/*'], dest: '<%= target %>javascripts'},
+                {cwd: 'src/', filter: 'isFile', flatten: true, expand: true, src: ['stylesheets/*'], dest: '<%= target %>stylesheets'}
+
 		    ]
 		  }
 		},
         watch: {
             files: ['**/*.js','**/*.css'],
             tasks: ['default']
+        },
+        less: {
+          development: {
+            options: {
+              paths: ["assets/css"]
+            },
+            files: {
+              "<%= target %>stylesheets/main.css": "src/stylesheets/main.less"
+            }
+          },
+          production: {
+            options: {
+              paths: ["assets/css"],
+              cleancss: true
+            },
+            files: {
+              "<%= target %>stylesheets/main.css": "src/stylesheets/main.less"
+            }
+          }
         }
     });
 
+    // Loading the different plugins
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
     grunt.loadNpmTasks('grunt-contrib-watch');
-
     grunt.loadNpmTasks('grunt-contrib-coffee');
-
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-less');
     
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'coffee', 'copy']);
+    grunt.registerTask('default', ['uglify', 'coffee', 'less', 'copy']);
 
 };

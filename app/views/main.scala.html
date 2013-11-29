@@ -7,14 +7,14 @@
 <html ng-app="ToDoApp">
     <head>
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main" + minified + ".css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/angular.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/angular-locale_" + lang.language + ".js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/angular-cookies.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/angular-animate.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/main" + minified + ".js")" type="text/javascript"></script>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("/public/stylesheets", "bootstrap.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("/public/stylesheets", "main" + minified + ".css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("/public/images", "favicon.png")">
+        <script src="@routes.Assets.at("/public/javascripts", "angular.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("/public/javascripts", "angular-locale_" + lang.language + ".js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("/public/javascripts", "angular-cookies.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("/public/javascripts", "angular-animate.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("/public/javascripts", "main" + minified + ".js")" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
