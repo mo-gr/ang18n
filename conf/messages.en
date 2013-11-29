@@ -3,6 +3,7 @@ application.title=Lame ToDo List
 language.select.en=English
 language.select.de=German
 language.select.ja=Japanese
+language.select.fr=French
 language.select.button=Select language
 
 todo.create.label=What are you up to?
