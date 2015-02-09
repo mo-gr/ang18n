@@ -4,7 +4,7 @@
 
 @minified=@{ if (play.Play.isProd()) ".min" else "" }
 
-<html ng-app="ToDoApp">
+<html ng-app="ToDoApp" lang="@lang.code">
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("/public/stylesheets", "bootstrap.css")">
